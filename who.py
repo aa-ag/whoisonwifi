@@ -1,14 +1,15 @@
 ###--- IMPORTS ---###
 import subprocess
+import urllib.request
 
 
-###--- network scanner ---###
-for ping in range(1, 10):
-    address = "127.0.0." + str(ping)
-    res = subprocess.call(['ping', '-c', '3', address])
-    if res == 0:
-        print("ping to", address, "OK")
-    elif res == 2:
-        print("no response from", address)
-    else:
-        print("ping to", address, "failed!")
+###--- check if connected ---###
+def connect(host='http://google.com'):
+    try:
+        urllib.request.urlopen(host)  # Python 3.x
+        return True
+    except:
+        return False
+
+
+print('yes' if connect() else 'no')
