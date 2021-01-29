@@ -2,7 +2,11 @@
 
 Python script to see who is connected to a wifi network.
 
-# Next
+## To run
+
+- `conda activate whoisonwifi`
+
+### Next
 
 - `pip install who-is-on-my-wifi`(https://pypi.org/project/who-is-on-my-wifi/)
 

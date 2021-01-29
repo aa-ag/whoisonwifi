@@ -1,15 +1,9 @@
 ###--- IMPORTS ---###
-import subprocess
-import urllib.request
+import scapy.all as scapy
 
 
-###--- check if connected ---###
-def connect(host='http://google.com'):
-    try:
-        urllib.request.urlopen(host)  # Python 3.x
-        return True
-    except:
-        return False
+###--- NETWORK SCANNER ---###
+request = scapy.ARP()
 
-
-print('yes' if connect() else 'no')
+print(request.summary())
+print(request.show())
